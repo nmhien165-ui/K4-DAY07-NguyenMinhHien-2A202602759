@@ -1,0 +1,51 @@
+KẾT QUẢ BENCHMARK CÁ NHÂN — NGUYỄN MINH HIỂN
+Chiến lược: RecursiveChunker(chunk_size=300)
+Embedding: local TF-IDF (offline, deterministic)
+Corpus: 6 tài liệu, 180 chunks
+
+Câu 1: Theo Quy chế đào tạo tín chỉ IUH năm 2025, khối lượng học tập tối thiểu và tối đa sinh viên phải đăng ký trong một học kỳ chính (trừ học kỳ cuối) là bao nhiêu tín chỉ?
+Filter: None
+Gold answer: Tối thiểu 12 tín chỉ và tối đa 30 tín chỉ.
+Relevant in top-3: Có
+Top-3:
+  1. iuh-regulation-course-registration#2 | score=0.6755 | b) Khối lượng học tập mà mỗi sinh viên phải đăng ký trong mỗi học kỳ chính (trừ học kỳ cuối) tối thiểu là 12 tín chỉ và tối đa là 30 tín chỉ.
+  2. iuh-regulation-course-registration#0 | score=0.4934 | Trích Điều 6 của Quy chế đào tạo theo hệ thống tín chỉ năm 2025 (Trường Đại học Công nghiệp TP. Hồ Chí Minh). ĐVĐT = đơn vị đào tạo; CTĐT = chương trình đào tạo. # Quy chế đào tạo 
+  3. huflit-course-registration#43 | score=0.4839 | ### Kiểm tra số tín chỉ tối đa và tối thiểu theo quy định
+
+Câu 2: Sinh viên UEH Phân hiệu Vĩnh Long có thể đăng nhập vào cổng portal sinh viên bằng những cách nào?
+Filter: None
+Gold answer: Dùng Mã sinh viên và Mật khẩu; hoặc đăng nhập Google bằng email sinh viên @st.ueh.edu.vn và mật khẩu.
+Relevant in top-3: Có
+Top-3:
+  1. ueh-vinh-long-course-registration#4 | score=0.4262 | - Tham khảo, tra cứu: sinh viên truy cập website http://khdtkt.ueh.edu.vn - Thời khóa biểu dự kiến và chính thức của Phân hiệu Vĩnh Long: https://khdtkt.ueh.edu.vn/danh-muc/thoi-kh
+  2. ueh-vinh-long-course-registration#5 | score=0.3533 | - **Cách 1:** truy cập portal, chọn "Đăng nhập", nhập Mã sinh viên và Mật khẩu. - **Cách 2:** truy cập portal, chọn "Đăng nhập", chọn "Nhấn vào đây để đăng nhập bằng Google với Ema
+  3. ueh-vinh-long-course-registration#2 | score=0.3249 | Mỗi giữa học kỳ, Phòng Đào tạo (UEH Mekong) thông báo trên website https://www.ueh.edu.vn/vinh-long kế hoạch mở hệ thống Portal sinh viên cho sinh viên đăng ký học phần của học kỳ 
+
+Câu 3: Để xác nhận lớp học phần được hỗ trợ đăng ký từ Phòng Đào tạo tại UIT, sinh viên cần thực hiện bước đầu tiên vào menu nào?
+Filter: None
+Gold answer: Truy cập dkhp.uit.edu.vn và chọn menu “Xác nhận Đăng ký Học Phần”.
+Relevant in top-3: Có
+Top-3:
+  1. uit-course-registration#2 | score=0.4596 | - Truy cập trang https://dkhp.uit.edu.vn - Dùng tài khoản chứng thực để đăng nhập. ## 2. Xác nhận lớp được hỗ trợ đăng ký từ Phòng ĐTĐH/CTĐB 1. Vào menu "Xác nhận Đăng ký Học Phần"
+  2. uit-course-registration#3 | score=0.3556 | Sau thời gian xác nhận, sinh viên nào đã xác nhận đồng ý sẽ giữ lại đăng ký học phần, sinh viên không thực hiện sẽ bị xóa đăng ký học phần. Sinh viên dù đồng ý hay không vẫn có thể
+  3. huflit-course-registration#11 | score=0.2863 | ### Thực hiện tiến hành đăng ký Để hoàn tất hướng dẫn đăng ký học phần tại HUFLIT, sinh viên cần đăng nhập vào hệ thống bằng email do trường cấp và thực hiện các bước sau
+
+Câu 4: Tại IUH, sau khi học phần đã được triển khai giảng dạy, Nhà trường có giải quyết cho sinh viên rút bớt học phần và hoàn phí không?
+Filter: None
+Gold answer: Không; Nhà trường không chấp thuận rút bớt học phần và không giải quyết hoàn phí, rút phí.
+Relevant in top-3: Có
+Top-3:
+  1. iuh-regulation-course-registration#14 | score=0.6982 | c) Những học phần sinh viên đã đăng ký và đóng học phí mà không học thì được xem như tự ý bỏ học và phải nhận điểm F học phần đó. d) Khi học phần đã được triển khai giảng dạy, Nhà 
+  2. iuh-regulation-course-registration#13 | score=0.3634 | b) Sau khi các học phần đã được chấp nhận mở lớp để triển khai giảng dạy, sinh viên phải đóng học phí cho những học phần đã đăng ký. Nếu không đóng học phí đúng thời hạn quy định, 
+  3. iuh-regulation-course-registration#12 | score=0.3364 | b) Học phí của học phần mở rộng không được miễn giảm. c) Học phần mở rộng không tính vào điểm trung bình chung tích lũy. **4. Rút bớt các học phần sau khi đăng ký**: a) Sinh viên c
+
+Câu 5: Theo quy định UEH, nhiệm vụ của Cố vấn học tập (giảng viên) trong công tác tư vấn kế hoạch học tập và đăng ký học phần cho sinh viên là gì?
+Filter: {'audience': 'faculty'}
+Gold answer: Tư vấn xây dựng và điều chỉnh kế hoạch học tập phù hợp; hướng dẫn đăng ký học phần từng học kỳ để hoàn thành kế hoạch.
+Relevant in top-3: Có
+Top-3:
+  1. ueh-academic-advising-regulation#13 | score=0.3967 | 3. Tư vấn cách thức xây dựng và điều chỉnh kế hoạch học tập phù hợp với năng lực và hoàn cảnh của sinh viên. Hướng dẫn cách thức đăng ký học phần ở từng học kỳ để hoàn thành kế hoạ
+  2. ueh-academic-advising-regulation#42 | score=0.3285 | 4. Phòng Kế hoạch đào tạo – Khảo thí a) Tư vấn về kế hoạch đào tạo, khảo thí và đánh giá kết quả học tập; b) Thực hiện các hoạt động tư vấn khác theo quy định.
+  3. ueh-academic-advising-regulation#24 | score=0.2982 | 7. Hướng dẫn sinh viên liên hệ các đơn vị thuộc trường để được tư vấn phù hợp với nhu cầu. ### Điều 7. Phòng Công tác chính trị 1. Xây dựng kế hoạch triển khai công tác tư vấn học 
+
+TỔNG KẾT: 5/5 câu có chunk trả lời được trong top-3.

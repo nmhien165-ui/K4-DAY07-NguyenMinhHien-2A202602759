@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -21,13 +22,29 @@ from src.models import Document
 from src.store import EmbeddingStore
 
 SAMPLE_FILES = [
-    "data/python_intro.txt",
-    "data/vector_store_notes.md",
-    "data/rag_system_design.md",
-    "data/customer_support_playbook.txt",
-    "data/chunking_experiment_report.md",
-    "data/vi_retrieval_notes.md",
+    "data/course-registration/huflit-course-registration.md",
+    "data/course-registration/iuh-course-registration-guide.md",
+    "data/course-registration/iuh-regulation-course-registration.md",
+    "data/course-registration/ueh-academic-advising-regulation.md",
+    "data/course-registration/ueh-vinh-long-course-registration.md",
+    "data/course-registration/uit-course-registration.md",
 ]
+
+
+def parse_front_matter(raw: str) -> tuple[dict[str, str], str]:
+    """Parse the simple YAML front matter used by the lab corpus."""
+    match = re.match(r"^---\s*\r?\n(.*?)\r?\n---\s*\r?\n?", raw, flags=re.DOTALL)
+    if not match:
+        return {}, raw.strip()
+
+    metadata: dict[str, str] = {}
+    for line in match.group(1).splitlines():
+        if ":" not in line:
+            continue
+        key, value = line.split(":", 1)
+        value = re.sub(r"\s+#.*$", "", value).strip().strip('"')
+        metadata[key.strip()] = value
+    return metadata, raw[match.end() :].strip()
 
 
 def load_documents_from_files(file_paths: list[str]) -> list[Document]:
@@ -46,12 +63,17 @@ def load_documents_from_files(file_paths: list[str]) -> list[Document]:
             print(f"Skipping missing file: {path}")
             continue
 
-        content = path.read_text(encoding="utf-8")
+        front_matter, content = parse_front_matter(path.read_text(encoding="utf-8"))
+        metadata = {
+            **front_matter,
+            "source": str(path),
+            "extension": path.suffix.lower(),
+        }
         documents.append(
             Document(
-                id=path.stem,
+                id=front_matter.get("doc_id", path.stem),
                 content=content,
-                metadata={"source": str(path), "extension": path.suffix.lower()},
+                metadata=metadata,
             )
         )
 
@@ -66,7 +88,7 @@ def demo_llm(prompt: str) -> str:
 
 def run_manual_demo(question: str | None = None, sample_files: list[str] | None = None) -> int:
     files = sample_files or SAMPLE_FILES
-    query = question or "Summarize the key information from the loaded files."
+    query = question or "Sinh viên cần lưu ý gì khi đăng ký học phần?"
 
     print("=== Manual File Test ===")
     print("Accepted file types: .md, .txt")
@@ -127,6 +149,8 @@ def run_manual_demo(question: str | None = None, sample_files: list[str] | None 
 
 
 def main() -> int:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     question = " ".join(sys.argv[1:]).strip() if len(sys.argv) > 1 else None
     return run_manual_demo(question=question)
 
